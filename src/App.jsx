@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './App.css'
 
 function App() {
@@ -22,14 +23,15 @@ function App() {
       .then(data => {
         console.log(data)
         if(data.insertedId) {
-          console.log("Register user successfully")
-          form.reset()
+          alert("Register user successfully")
+          form.reset()  
         }
       })
   }
 
   return (
     <>
+      <Link to="/users"><button>Users List</button></Link>
       <h1>Simple CRUD</h1>
       <form onSubmit={handleAddUser}>
         <input type="text" name="name" id="" />
